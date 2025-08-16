@@ -172,12 +172,24 @@ console.log("Destructured name:", name); // John
 
 
 
+//What is a Closure?
+// A closure happens when a function “remembers” variables from the place where it was created, even after that outer function has finished running.
 
 
 
+const outterFunction = () => {
+    let counter = 0;  // outer function variables
 
+    return () => { //inner function
+        counter += 1;
+        console.log("Counter Value:", counter);
+    }
+}
 
-
-
+//create  CLOSURE
+const closure = outterFunction();
+closure();
+closure();
+closure();
 
 
